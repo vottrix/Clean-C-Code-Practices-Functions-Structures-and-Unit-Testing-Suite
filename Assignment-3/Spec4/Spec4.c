@@ -1,18 +1,18 @@
 
-//JADEN MARDINI - PROG71990 - Assignment 3 - Student# 8762993
+//JADEN MARDINI
 
 //First, write a component(a pair of.c and .h files) that defines a structure
 //template with two member attributes according to the following criteria :
 // 
-//ï the first member is a student number as a single fixed length numeric field
+//‚Ä¢ the first member is a student number as a single fixed length numeric field
 //with a maximum length of 10 digits.
 // 
-//ï the second member is a structure with three members according to the
+//‚Ä¢ the second member is a structure with three members according to the
 //following criteria :
 // 
-//ñ first member is ìfirst nameî
-//ñ second member is ìmiddle nameî
-//ñ third member is ìlast nameî
+//‚Äì first member is ‚Äúfirst name‚Äù
+//‚Äì second member is ‚Äúmiddle name‚Äù
+//‚Äì third member is ‚Äúlast name‚Äù
 // 
 //Next, write and test a program that creates and initializes an array of 4 of
 //these structures(Please make up pretend names / numbers for your 4 students
@@ -21,7 +21,7 @@
 //    Finally, write a single function that accepts an array of these structures as a
 //    parameter and prints the array data in the following format :
 // 
-//2001041234 ñ LastName, FirstName MiddleInitial.
+//2001041234 ‚Äì LastName, FirstName MiddleInitial.
 // 
 //and then use this function in your program to display your student records.
 //Note that only the initial of the middle name should be printed, followed by
