@@ -1,5 +1,5 @@
 
-//JADEN MARDINI - PROG71990 - Assignment 3 - Student# 8762993
+//JADEN MARDINI
 
 //Write a function that sets each element in an array to the product of the
 //corresponding elements in two other arrays.For example, if array 1 has the
