@@ -1,6 +1,5 @@
 
-//JADEN MARDINI - PROG71990 - Assignment 3 - Student# 8762993
-
+//JADEN MARDINI
 // Write a function called SmallerOf(double, double) that replaces the contents
 // of two double variables with the smaller of the two values.For example,
 // SmallerOf(x, y) would reset both x and y to the smaller of the two.Please also
