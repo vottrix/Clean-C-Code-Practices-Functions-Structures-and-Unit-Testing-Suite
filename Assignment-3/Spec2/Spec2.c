@@ -1,5 +1,5 @@
 
-//JADEN MARDINI - PROG71990 - Assignment 3 - Student# 8762993
+//JADEN MARDINI
 
 // Write a function that returns the sum (addition) of the largest and the smallest
 // elements of an array of doubles.You may choose an appropriate name for your
