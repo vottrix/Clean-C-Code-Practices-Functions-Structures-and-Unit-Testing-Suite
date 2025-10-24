@@ -1,20 +1,21 @@
 #ifndef SPEC4_H
 #define SPEC4_H
 
-// define a structure for the student names
+#define MAX_NAME_LENGTH 35
+#define STUDENT_NUMBER_LENGTH 11
+
 typedef struct {
-    char firstName[35];         // first name of the student
-    char middleName[35];        // niddle name or initial (can be empty)
-    char lastName[35];          // last name of the student
+    char firstName[MAX_NAME_LENGTH];
+    char middleName[MAX_NAME_LENGTH];
+    char lastName[MAX_NAME_LENGTH];
 } Name;
 
-// define a structure for a student record
 typedef struct {
-    char studentNumber[11];     // fixed-length student number (10 digits + null terminator)
-    Name name;                  // embed the Name structure
+    char studentNumber[STUDENT_NUMBER_LENGTH];
+    Name name;
 } Student;
 
-// function declaration for printing the student records
+// Prints student records in format: "StudentNumber - LastName, FirstName MiddleInitial."
 void PrintStudentRecords(const Student students[], int size);
 
 #endif

@@ -1,7 +1,6 @@
 #include "pch.h"
 #include "CppUnitTest.h"
 
-// include the header for SmallerOf
 extern "C" {
 #include "../Spec1/Spec1.h"
 }
@@ -14,74 +13,56 @@ namespace Spec1UnitTests
     {
     public:
 
-        // test when both values are positive and different
         TEST_METHOD(TestPositiveValues)
         {
-            // set x to 5.5 and y to 11.3
             double x = 5.5, y = 11.3;
-
-            // call SmallerOf, which should set both x and y to 5.5
             SmallerOf(&x, &y);
-
-            // assert that x and y are both equal to 5.5 now
-            Assert::AreEqual(x, 5.5);
-            Assert::AreEqual(y, 5.5);
+            Assert::AreEqual(5.5, x);
+            Assert::AreEqual(5.5, y);
         }
 
-        // test when both values are negative
         TEST_METHOD(TestNegativeValues)
         {
-            // set x to -9.5 and y to -4.0
-            double x = -9.5, y = -4.0;
-
-            // smallerOf should set both x and y to -9.5
+            double x = -3.2, y = -7.8;
             SmallerOf(&x, &y);
-
-            // check if both values are correctly set to -9.5
-            Assert::AreEqual(x, -9.5);
-            Assert::AreEqual(y, -9.5);
+            Assert::AreEqual(-7.8, x);
+            Assert::AreEqual(-7.8, y);
         }
 
-        // test when one value is zero
-        TEST_METHOD(TestZero)
+        TEST_METHOD(TestMixedValues)
         {
-            // set x to 0.0 and y to 15.8
-            double x = 0.0, y = 15.8;
-
-            // after calling SmallerOf, both x and y should be 0.0
+            double x = -2.5, y = 4.1;
             SmallerOf(&x, &y);
-
-            // assert both values are 0.0
-            Assert::AreEqual(x, 0.0);
-            Assert::AreEqual(y, 0.0);
+            Assert::AreEqual(-2.5, x);
+            Assert::AreEqual(-2.5, y);
         }
 
-        // test when both values are the same
         TEST_METHOD(TestEqualValues)
         {
-            // set x and y to the same value, 8.8
-            double x = 8.8, y = 8.8;
-
-            // after SmallerOf, both x and y should still be 8.8
+            double x = 3.14, y = 3.14;
             SmallerOf(&x, &y);
-
-            // verify that both remain 8.8
-            Assert::AreEqual(x, 8.8);
-            Assert::AreEqual(y, 8.8);
+            Assert::AreEqual(3.14, x);
+            Assert::AreEqual(3.14, y);
         }
 
-        // test for extreme cases (large and small doubles)
-        TEST_METHOD(TestEdgeCases)
+        TEST_METHOD(TestZeroValues)
         {
-            // set x to DBL_MAX (largest possible double) and y to DBL_MIN (smallest possible double)
-            double x = DBL_MAX, y = DBL_MIN;
-
-            // SmallerOf should set both to DBL_MIN, the smaller value
+            double x = 0.0, y = -1.0;
             SmallerOf(&x, &y);
+            Assert::AreEqual(-1.0, x);
+            Assert::AreEqual(-1.0, y);
+        }
 
-            // check if both x and y are set to DBL_MIN
-            Assert::AreEqual(x, DBL_MIN);
-            Assert::AreEqual(y, DBL_MIN);
+        TEST_METHOD(TestNullPointers)
+        {
+            double x = 5.0, y = 3.0;
+            double original_x = x, original_y = y;
+            
+            SmallerOf(nullptr, &y);
+            Assert::AreEqual(original_y, y);
+            
+            SmallerOf(&x, nullptr);
+            Assert::AreEqual(original_x, x);
         }
     };
 }
